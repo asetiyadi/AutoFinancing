@@ -7,16 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB3DB5D21BBEEAB400BDC151 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3DB5D11BBEEAA700BDC151 /* Charts.framework */; };
+		DB3DB5D31BBEEAB400BDC151 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB3DB5D11BBEEAA700BDC151 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DB3DB5DE1BBF0A5400BDC151 /* VehicleModelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3DB5DD1BBF0A5400BDC151 /* VehicleModelTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		DBD640E11BB9F10A0014E833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD640E01BB9F10A0014E833 /* AppDelegate.swift */; };
-		DBD640E31BB9F10A0014E833 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD640E21BB9F10A0014E833 /* ViewController.swift */; };
 		DBD640E61BB9F10A0014E833 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBD640E41BB9F10A0014E833 /* Main.storyboard */; };
 		DBD640E81BB9F10A0014E833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBD640E71BB9F10A0014E833 /* Assets.xcassets */; };
 		DBD640EB1BB9F10A0014E833 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBD640E91BB9F10A0014E833 /* LaunchScreen.storyboard */; };
 		DBD640F61BB9F10A0014E833 /* AutoFinancingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD640F51BB9F10A0014E833 /* AutoFinancingTests.swift */; };
 		DBD641011BB9F10A0014E833 /* AutoFinancingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD641001BB9F10A0014E833 /* AutoFinancingUITests.swift */; };
+		DBE668BA1BBDA8FC00C979B2 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE668B41BBDA8FC00C979B2 /* Asset.swift */; settings = {ASSET_TAGS = (); }; };
+		DBE668BB1BBDA8FC00C979B2 /* Loan.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE668B51BBDA8FC00C979B2 /* Loan.swift */; settings = {ASSET_TAGS = (); }; };
+		DBE668BC1BBDA8FC00C979B2 /* LoanInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE668B61BBDA8FC00C979B2 /* LoanInfoViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		DBE668BD1BBDA8FC00C979B2 /* LoanParameterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE668B71BBDA8FC00C979B2 /* LoanParameterTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		DBE668BE1BBDA8FD00C979B2 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE668B81BBDA8FC00C979B2 /* Vehicle.swift */; settings = {ASSET_TAGS = (); }; };
+		DBE668BF1BBDA8FD00C979B2 /* VehicleMakeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE668B91BBDA8FC00C979B2 /* VehicleMakeTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		DBE668CC1BBDA9FD00C979B2 /* AutoLoanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE668CB1BBDA9FD00C979B2 /* AutoLoanTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DB3DB5D01BBEEAA700BDC151 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB3DB5CC1BBEEAA700BDC151 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
+			remoteInfo = Charts;
+		};
+		DB3DB5D41BBEEAB400BDC151 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB3DB5CC1BBEEAA700BDC151 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
+			remoteInfo = Charts;
+		};
 		DBD640F21BB9F10A0014E833 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DBD640D51BB9F10A0014E833 /* Project object */;
@@ -33,10 +56,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DB3DB5B01BBED76D00BDC151 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DB3DB5D31BBEEAB400BDC151 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		DB3DB5CC1BBEEAA700BDC151 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		DB3DB5DD1BBF0A5400BDC151 /* VehicleModelTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleModelTableViewController.swift; sourceTree = "<group>"; };
 		DBD640DD1BB9F10A0014E833 /* AutoFinancing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoFinancing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD640E01BB9F10A0014E833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DBD640E21BB9F10A0014E833 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DBD640E51BB9F10A0014E833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DBD640E71BB9F10A0014E833 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBD640EA1BB9F10A0014E833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +85,13 @@
 		DBD640FC1BB9F10A0014E833 /* AutoFinancingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoFinancingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD641001BB9F10A0014E833 /* AutoFinancingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoFinancingUITests.swift; sourceTree = "<group>"; };
 		DBD641021BB9F10A0014E833 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBE668B41BBDA8FC00C979B2 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		DBE668B51BBDA8FC00C979B2 /* Loan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loan.swift; sourceTree = "<group>"; };
+		DBE668B61BBDA8FC00C979B2 /* LoanInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoanInfoViewController.swift; sourceTree = "<group>"; };
+		DBE668B71BBDA8FC00C979B2 /* LoanParameterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoanParameterTableViewController.swift; sourceTree = "<group>"; };
+		DBE668B81BBDA8FC00C979B2 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		DBE668B91BBDA8FC00C979B2 /* VehicleMakeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleMakeTableViewController.swift; sourceTree = "<group>"; };
+		DBE668CB1BBDA9FD00C979B2 /* AutoLoanTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLoanTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB3DB5D21BBEEAB400BDC151 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +120,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB3DB5CD1BBEEAA700BDC151 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB3DB5D11BBEEAA700BDC151 /* Charts.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB3DB5DC1BBEFEFA00BDC151 /* PopOvers */ = {
+			isa = PBXGroup;
+			children = (
+				DBE668CB1BBDA9FD00C979B2 /* AutoLoanTableViewController.swift */,
+				DBE668B91BBDA8FC00C979B2 /* VehicleMakeTableViewController.swift */,
+				DB3DB5DD1BBF0A5400BDC151 /* VehicleModelTableViewController.swift */,
+			);
+			name = PopOvers;
+			sourceTree = "<group>";
+		};
 		DBD640D41BB9F10A0014E833 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +145,7 @@
 				DBD640F41BB9F10A0014E833 /* AutoFinancingTests */,
 				DBD640FF1BB9F10A0014E833 /* AutoFinancingUITests */,
 				DBD640DE1BB9F10A0014E833 /* Products */,
+				DB3DB5CC1BBEEAA700BDC151 /* Charts.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +162,13 @@
 		DBD640DF1BB9F10A0014E833 /* AutoFinancing */ = {
 			isa = PBXGroup;
 			children = (
+				DB3DB5DC1BBEFEFA00BDC151 /* PopOvers */,
+				DBE668B41BBDA8FC00C979B2 /* Asset.swift */,
+				DBE668B51BBDA8FC00C979B2 /* Loan.swift */,
+				DBE668B61BBDA8FC00C979B2 /* LoanInfoViewController.swift */,
+				DBE668B71BBDA8FC00C979B2 /* LoanParameterTableViewController.swift */,
+				DBE668B81BBDA8FC00C979B2 /* Vehicle.swift */,
 				DBD640E01BB9F10A0014E833 /* AppDelegate.swift */,
-				DBD640E21BB9F10A0014E833 /* ViewController.swift */,
 				DBD640E41BB9F10A0014E833 /* Main.storyboard */,
 				DBD640E71BB9F10A0014E833 /* Assets.xcassets */,
 				DBD640E91BB9F10A0014E833 /* LaunchScreen.storyboard */,
@@ -135,10 +205,12 @@
 				DBD640D91BB9F10A0014E833 /* Sources */,
 				DBD640DA1BB9F10A0014E833 /* Frameworks */,
 				DBD640DB1BB9F10A0014E833 /* Resources */,
+				DB3DB5B01BBED76D00BDC151 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DB3DB5D51BBEEAB400BDC151 /* PBXTargetDependency */,
 			);
 			name = AutoFinancing;
 			productName = AutoFinancing;
@@ -214,6 +286,12 @@
 			mainGroup = DBD640D41BB9F10A0014E833;
 			productRefGroup = DBD640DE1BB9F10A0014E833 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DB3DB5CD1BBEEAA700BDC151 /* Products */;
+					ProjectRef = DB3DB5CC1BBEEAA700BDC151 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				DBD640DC1BB9F10A0014E833 /* AutoFinancing */,
@@ -222,6 +300,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DB3DB5D11BBEEAA700BDC151 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = DB3DB5D01BBEEAA700BDC151 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DBD640DB1BB9F10A0014E833 /* Resources */ = {
@@ -255,7 +343,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBD640E31BB9F10A0014E833 /* ViewController.swift in Sources */,
+				DBE668BF1BBDA8FD00C979B2 /* VehicleMakeTableViewController.swift in Sources */,
+				DBE668BE1BBDA8FD00C979B2 /* Vehicle.swift in Sources */,
+				DBE668CC1BBDA9FD00C979B2 /* AutoLoanTableViewController.swift in Sources */,
+				DB3DB5DE1BBF0A5400BDC151 /* VehicleModelTableViewController.swift in Sources */,
+				DBE668BC1BBDA8FC00C979B2 /* LoanInfoViewController.swift in Sources */,
+				DBE668BD1BBDA8FC00C979B2 /* LoanParameterTableViewController.swift in Sources */,
+				DBE668BA1BBDA8FC00C979B2 /* Asset.swift in Sources */,
+				DBE668BB1BBDA8FC00C979B2 /* Loan.swift in Sources */,
 				DBD640E11BB9F10A0014E833 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +374,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DB3DB5D51BBEEAB400BDC151 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = DB3DB5D41BBEEAB400BDC151 /* PBXContainerItemProxy */;
+		};
 		DBD640F31BB9F10A0014E833 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DBD640DC1BB9F10A0014E833 /* AutoFinancing */;
@@ -311,6 +411,90 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DB3DB5D61BBEED5000BDC151 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: International Business Machines";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: International Business Machines";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = None;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Distribution;
+		};
+		DB3DB5D71BBEED5000BDC151 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: International Business Machines";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: International Business Machines";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = AutoFinancing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cio.be.ipad.AutoFinancing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = None;
+			};
+			name = Distribution;
+		};
+		DB3DB5D81BBEED5000BDC151 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = AutoFinancingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cio.be.ipad.AutoFinancingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AutoFinancing.app/AutoFinancing";
+			};
+			name = Distribution;
+		};
+		DB3DB5D91BBEED5000BDC151 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AutoFinancingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cio.be.ipad.AutoFinancingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = AutoFinancing;
+				USES_XCTRUNNER = YES;
+			};
+			name = Distribution;
+		};
 		DBD641031BB9F10A0014E833 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -328,7 +512,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: International Business Machines";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: International Business Machines";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -347,9 +532,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = None;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -373,7 +559,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: International Business Machines";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: International Business Machines";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -386,8 +573,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = None;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -398,10 +586,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: International Business Machines";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: International Business Machines";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = AutoFinancing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cio.be.ipad.AutoFinancing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = None;
 			};
 			name = Debug;
 		};
@@ -409,10 +606,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: International Business Machines";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: International Business Machines";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = AutoFinancing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.cio.be.ipad.AutoFinancing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = None;
 			};
 			name = Release;
 		};
@@ -472,6 +678,7 @@
 			buildConfigurations = (
 				DBD641031BB9F10A0014E833 /* Debug */,
 				DBD641041BB9F10A0014E833 /* Release */,
+				DB3DB5D61BBEED5000BDC151 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -481,24 +688,30 @@
 			buildConfigurations = (
 				DBD641061BB9F10A0014E833 /* Debug */,
 				DBD641071BB9F10A0014E833 /* Release */,
+				DB3DB5D71BBEED5000BDC151 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DBD641081BB9F10A0014E833 /* Build configuration list for PBXNativeTarget "AutoFinancingTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DBD641091BB9F10A0014E833 /* Debug */,
 				DBD6410A1BB9F10A0014E833 /* Release */,
+				DB3DB5D81BBEED5000BDC151 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DBD6410B1BB9F10A0014E833 /* Build configuration list for PBXNativeTarget "AutoFinancingUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DBD6410C1BB9F10A0014E833 /* Debug */,
 				DBD6410D1BB9F10A0014E833 /* Release */,
+				DB3DB5D91BBEED5000BDC151 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
