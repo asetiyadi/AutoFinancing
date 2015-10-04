@@ -12,14 +12,7 @@ import Foundation
 class Asset {
     
     // MARK: Properties
-    
-    //static LoanType
-    static var LOANTYPE_USED_CAR_60 = "Used Car (Dealer) - 60 months"
-    static var LOANTYPE_USED_CAR_72 = "Used Car (Dealer) - 72 months"
-    static var LOANTYPE_NEW_CAR_60 = "New Car (Dealer) - 60 months"
-    static var LOANTYPE_NEW_CAR_72 = "New Car (Dealer) - 72 months"
-    static var LOANTYPE_REFINANCE_60 = "Refinance - 60 months"
-    static var LOANTYPE_REFINANCE_72 = "Refinance - 72 months"
+
     
     // MARK: Static Public Functions
     
@@ -70,6 +63,14 @@ class Asset {
         image.layer.borderColor = UIColor.grayColor().CGColor
         
         return image
+    }
+    
+    static func viewRound(view: UIView, radius: CGFloat) -> UIView {
+        view.layer.borderWidth = 1
+        view.layer.cornerRadius = radius
+        view.layer.borderColor = UIColor.grayColor().CGColor
+        
+        return view
     }
     
     /*static func dashboardHeader() -> UIView {

@@ -9,8 +9,17 @@
 import Foundation
 
 
+enum LoanType: String {
+    case Used60 = "Used Car (Dealer) - 60 months"
+    case New60 = "New Car (Dealer) - 60 months"
+    case Refi60 = "Refinance - 60 months"
+    case Used72 = "Used Car (Dealer) - 72 months"
+    case New72 = "New Car (Dealer) - 72 months"
+    case Refi72 = "Refinance - 72 months"
+}
+
 class Loan  {
-    var loanType: String = ""
+    var loanType = LoanType.Used60
     var vehicleMake: String = ""
     var vehicleModel: String = ""
     var maxDownPayment: Int = 2500
@@ -24,10 +33,10 @@ class Loan  {
 //        self.maxMonthlyPayment = maxMonthlyPayment
 //    }
 
-    func getLoanType() -> String {
+    func getLoanType() -> LoanType {
         return loanType
     }
-    func setLoanType(loanType: String) {
+    func setLoanType(loanType: LoanType) {
         self.loanType = loanType
     }
     
@@ -87,12 +96,21 @@ class Loan  {
         let amountBeingFinanced = vehiclePrice - downPayment - Double(tradeInValue)
         
         let interestRatePerMonth = interestRate / 12
-        let numberOfPeriod = 60.0
+        let numberOfPeriod = getLoanTerm()
         let paymentFactor = (1 - pow((1 + interestRatePerMonth), -1.0 * numberOfPeriod)) / interestRatePerMonth
         let monthlyPayment = round(100 * (amountBeingFinanced / paymentFactor))/100
         let monthlyInterest = round(100 * interestRatePerMonth * amountBeingFinanced)/100
         let monthlyPrincipal = monthlyPayment - monthlyInterest
         
         return (monthlyPrincipal, monthlyInterest)
+    }
+    
+    func getLoanTerm() -> Double {
+        switch self.loanType {
+            case LoanType.Used60, LoanType.New60, LoanType.Refi60:
+                return 60.0
+            case LoanType.Used72, LoanType.New72, LoanType.Refi72:
+                return 72.0
+        }
     }
 }

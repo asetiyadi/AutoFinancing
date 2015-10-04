@@ -33,24 +33,19 @@ class LoanInfoViewController: UIViewController {
         }
     }
     
-    var maxPayment: Int = 100 {
+    /*var maxPayment: Int = 100 {
         didSet(newPayment) {
             self.refreshUI()
         }
-    }
+    }*/
     
     @IBOutlet weak var maxMonthlyPaymentLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loanDetailView.layer.borderWidth = 2
-        loanDetailView.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).CGColor
-        loanDetailView.layer.cornerRadius = 10
-        
-        sampleCarImageView.layer.borderWidth = 2
-        sampleCarImageView.layer.borderColor = UIColor.grayColor().CGColor
-        sampleCarImageView.layer.cornerRadius = 5
+        Asset.viewRound(loanDetailView, radius: 10)
+        Asset.imageRound(sampleCarImageView, radius: 5)
         
         
         refreshUI()
@@ -62,15 +57,6 @@ class LoanInfoViewController: UIViewController {
     }
     
     func refreshUI() {
-        print(String(maxPayment))
-        if let loan = loan {
-            //maxMonthlyPaymentLabel.text = String(loan.getMaxMonthlyPayment())
-            
-//            vehicleYearLabel.text
-            //vehicleMakeLabel.text = loan.getVehicleMake()
-            //loanTypeLabel.text = loan.getLoanType()
-        }
-        
         if let loan = loan {
             let monthlyPayments = loan.calculateMonthlyPayment()
             let paymentTypes = ["Principal", "Interest"]
@@ -81,15 +67,13 @@ class LoanInfoViewController: UIViewController {
             
             setChart(paymentTypes, values: paymentAmount)
         }
-        
-        
     }
     
     func setChart(dataPoints: [String], values: [Double]) {
         var dataEntries: [ChartDataEntry] = []
         
         for x in 0..<dataPoints.count {
-            var dataEntry = ChartDataEntry(value: values[x], xIndex: x)
+            let dataEntry = ChartDataEntry(value: values[x], xIndex: x)
             dataEntries.append(dataEntry)
         }
         
@@ -107,10 +91,6 @@ class LoanInfoViewController: UIViewController {
         var color: UIColor!
         
         for i in 0..<dataPoints.count {
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
-            
             if i == 0 {
                 color = UIColor(red: 0.047, green: 0.325, blue: 0.533, alpha: 1)
             }
@@ -141,9 +121,5 @@ class LoanInfoViewController: UIViewController {
 extension LoanInfoViewController: LoanParameterSelectionDelegate {
     func loanParameterSelected(newLoan: Loan) {
         loan = newLoan
-    }
-    
-    func maxPayment(newPayment: Int) {
-        maxPayment = newPayment
     }
 }

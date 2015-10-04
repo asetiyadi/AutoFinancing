@@ -20,6 +20,9 @@ class VehicleModelTableViewController: UITableViewController {
 
         createAutoModelList()
         
+        // Remove extra line separator
+        tableView.tableFooterView = UIView()
+        
         // Prevent popover dismissal when users tap anywhere
         self.modalInPopover = true
     }
@@ -29,10 +32,14 @@ class VehicleModelTableViewController: UITableViewController {
         let stringURL = "http://autotrader.mybluemix.net/api/v1/car/" + (myLoan?.getVehicleMake())! + "/model"
         let url = NSURL(string: stringURL)
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) { (data, response, error) -> Void in
-            if let urlContent = data {
+            if error != nil {
+                self.autoModels.append("Error: Unable to retrieve vehicle info")
+            }
+            
+            if let _ = data {
                 do {
                     let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
-                    NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    //NSString(data: data!, encoding: NSUTF8StringEncoding)
                     
                     if jsonResult.count > 0 {
                         //var tempAutos = [String]()
@@ -40,11 +47,6 @@ class VehicleModelTableViewController: UITableViewController {
                             for item in items {
                                 self.autoModels.append(item as String)
                             }
-                            
-                            // To update the UI from background thread, need to get the main thread
-                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                self.autoModelTableView.reloadData()
-                            })
                         }
                     }
                 }
@@ -52,10 +54,14 @@ class VehicleModelTableViewController: UITableViewController {
                     
                 }
             }
+            
+            // To update the UI from background thread, need to get the main thread
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.autoModelTableView.reloadData()
+            })
         }
         
         task.resume()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,51 +93,5 @@ class VehicleModelTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         myLoan!.setVehicleModel(autoModels[indexPath.row])
     }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

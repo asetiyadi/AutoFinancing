@@ -10,30 +10,30 @@ import UIKit
 
 protocol LoanParameterSelectionDelegate: class {
     func loanParameterSelected(newLoan: Loan)
-    func maxPayment(newPayment: Int)
+    //func maxPayment(newPayment: Int)
 }
 
 
 
 class LoanParameterTableViewController: UITableViewController, UITextFieldDelegate {
     
+    // MARK: delegate
+    
+    // delegate object is initialized in AppDelegate
+    weak var delegate: LoanParameterSelectionDelegate?
+    
+    
     // MARK: Properties
+    
     var myLoan = Loan()
     var vehicle = Vehicle()
     var autoMakers = [String]()
-    weak var delegate: LoanParameterSelectionDelegate?
     var loanInfoViewController: LoanInfoViewController? = nil
-    //var loan: Loan!
     
     @IBOutlet weak var autoLoanTypeButton: UIButton!
     @IBOutlet weak var autoMakerButton: UIButton!
     @IBOutlet weak var autoModelButton: UIButton!
     
-    
-    /*@IBAction func didTapAutoLoan(sender: UIButton) {
-        print("performing segue")
-        //performSegueWithIdentifier("segueAutoLoan", sender: self)
-    }*/
     
     @IBOutlet weak var homeLocationField: UITextField!
     @IBOutlet weak var militarySwitch: UISwitch!
@@ -53,16 +53,12 @@ class LoanParameterTableViewController: UITableViewController, UITextFieldDelega
     @IBOutlet weak var tradeInValueField: UITextField!
     @IBOutlet weak var interestRateField: UITextField!
     
-//    let vehicleMakers: [String]?
-//    let vehicle: Vehicle
     
     // MARK: Overrides
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //createAutoMakerList()
-        
+
         // Max down payment
         maxDownPaymentDollarField.text = String(Int(maxDownPaymentSlider.value))
         maxDownPaymentDollarField.addTarget(self, action: "loanUpdate:", forControlEvents: UIControlEvents.EditingChanged)
@@ -86,22 +82,8 @@ class LoanParameterTableViewController: UITableViewController, UITextFieldDelega
         
         // Interest rate
         interestRateField.addTarget(self, action: "loanUpdate:", forControlEvents: UIControlEvents.EditingChanged)
-        
-        
-//        print("maxDownPaymentSlider = \(maxDownPaymentSlider.value)")
-//        print("maxDownPaymentDollarField = \(maxDownPaymentDollarField.text)")
-//        print("maxMonthlyPaymentSlider = \(maxMonthlyPaymentSlider.value)")
-//        print("maxMonthlyPaymentField = \(maxMonthlyPaymentField.text)")
-    
-        //loan = Loan(maxMonthlyPayment: 5)
-        
-        if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            self.loanInfoViewController = (controllers[controllers.count-1] as! LoanInfoViewController)
-        }
-        
-        vehicle.createAutoMakerList()
-        
+
+        // Restrict users to select auto model before the auto maker is selected
         autoModelButton.enabled = false
     }
 
@@ -151,42 +133,29 @@ class LoanParameterTableViewController: UITableViewController, UITextFieldDelega
         }
         
         sender.setValue(Float(sliderValue), animated: true)
-        
-        
-        print("sliderValue = \(sliderValue)")
     }
     
     func loanUpdate(sender: AnyObject) {
-        //print(maxMonthlyPaymentField.text!)
-        //myLoan.setMaxDownPayment(Int((maxDownPaymentDollarField.text! as NSString).floatValue))
-        //myLoan.setMaxMonthlyPayment(Int((maxMonthlyPaymentField.text! as NSString).floatValue))
-        
+
         if tradeInValueField.text != "" {
             myLoan.setTradeInValue(Int(tradeInValueField.text!)!)
         }
         
-        
+        // Update Loan information
         myLoan.setMaxDownPayment(Int((maxDownPaymentDollarField.text! as NSString).floatValue))
         myLoan.setMaxMonthlyPayment(Int((maxMonthlyPaymentField.text! as NSString).floatValue))
         myLoan.setMaxPurchasePrice(Int((maxPurchasePriceField.text! as NSString).floatValue))
-        
         myLoan.setInterestRate(Double(interestRateField.text!)!)
-        
+
+        // Inform loanInfoViewController about the update on loan parameter
         delegate?.loanParameterSelected(myLoan)
-        delegate?.maxPayment(myLoan.maxMonthlyPayment)
+
         if let loanInfoViewController = delegate as? LoanInfoViewController {
             splitViewController?.showDetailViewController(loanInfoViewController, sender: nil)
         }
-        else {
-            
-        }
-        //print(myLoan.maxMonthlyPayment)
     }
     
-    
-    
-    
-    
+
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -204,72 +173,11 @@ class LoanParameterTableViewController: UITableViewController, UITextFieldDelega
         //cell.backgroundColor = UIColor.yellowColor()
     }
     
-    override func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
-        print("accessory indexpath.row = \(indexPath.row)")
-        /*if indexPath.row == 2 {
-            performSegueWithIdentifier("segueAutoLoan", sender: nil)
-        }*/
-    }
-    
-    /*override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 2 {
-            performSegueWithIdentifier("segueAutoLoan", sender: nil)
-            //print("didSelectRow - indexpath.row = \(indexPath.row)")
-        }
-    }*/
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("loanParamCell", forIndexPath: indexPath) as! LoanParameterTableViewCell
-        
-        cell.textLabel?.text = "TESTING"
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("segue: \(segue.identifier)")
-        
         if segue.identifier! == "segueAutoLoanType" {
             let navigationController = segue.destinationViewController as! UINavigationController
             let autoLoanTypeController = navigationController.topViewController as! AutoLoanTableViewController
@@ -280,26 +188,18 @@ class LoanParameterTableViewController: UITableViewController, UITextFieldDelega
             let navigationController = segue.destinationViewController as! UINavigationController
             let vehicleMakeController = navigationController.topViewController as! VehicleMakeTableViewController
             
-            //UIApplication.sharedApplication().keyWindow?.rootViewController!.presentViewController(autoLoanTableViewController, animated: true, completion: nil)
-            //vehicleMakeController.autoMakers = autoMakers
             vehicleMakeController.myLoan = myLoan
         }
         else if segue.identifier == "segueAutoModels" {
             let navigationController = segue.destinationViewController as! UINavigationController
             let vehicleModelController = navigationController.topViewController as! VehicleModelTableViewController
             
-            //UIApplication.sharedApplication().keyWindow?.rootViewController!.presentViewController(autoLoanTableViewController, animated: true, completion: nil)
-            //vehicleMakeController.autoModels = autoModels
             vehicleModelController.myLoan = myLoan
         }
     }
     
     @IBAction func unwindToMasterView(segue: UIStoryboardSegue) {
-
-        // Auto Loan Type button
-        if myLoan.getLoanType() != "" {
-            autoLoanTypeButton.setTitle(myLoan.getLoanType(), forState: UIControlState.Normal)
-        }
+        autoLoanTypeButton.setTitle(myLoan.getLoanType().rawValue, forState: UIControlState.Normal)
         
         if myLoan.getVehicleMake() != "" {
             autoMakerButton.setTitle(myLoan.getVehicleMake(), forState: UIControlState.Normal)
@@ -313,6 +213,4 @@ class LoanParameterTableViewController: UITableViewController, UITextFieldDelega
         
         loanUpdate(self)
     }
-    
-
 }

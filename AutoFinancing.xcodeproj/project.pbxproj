@@ -10,6 +10,7 @@
 		DB3DB5D21BBEEAB400BDC151 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3DB5D11BBEEAA700BDC151 /* Charts.framework */; };
 		DB3DB5D31BBEEAB400BDC151 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB3DB5D11BBEEAA700BDC151 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB3DB5DE1BBF0A5400BDC151 /* VehicleModelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3DB5DD1BBF0A5400BDC151 /* VehicleModelTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		DB3DB5E01BC0448E00BDC151 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3DB5DF1BC0448E00BDC151 /* Assets.swift */; settings = {ASSET_TAGS = (); }; };
 		DBD640E11BB9F10A0014E833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD640E01BB9F10A0014E833 /* AppDelegate.swift */; };
 		DBD640E61BB9F10A0014E833 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBD640E41BB9F10A0014E833 /* Main.storyboard */; };
 		DBD640E81BB9F10A0014E833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBD640E71BB9F10A0014E833 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 /* Begin PBXFileReference section */
 		DB3DB5CC1BBEEAA700BDC151 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		DB3DB5DD1BBF0A5400BDC151 /* VehicleModelTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleModelTableViewController.swift; sourceTree = "<group>"; };
+		DB3DB5DF1BC0448E00BDC151 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		DBD640DD1BB9F10A0014E833 /* AutoFinancing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoFinancing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD640E01BB9F10A0014E833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBD640E51BB9F10A0014E833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				DBD640E71BB9F10A0014E833 /* Assets.xcassets */,
 				DBD640E91BB9F10A0014E833 /* LaunchScreen.storyboard */,
 				DBD640EC1BB9F10A0014E833 /* Info.plist */,
+				DB3DB5DF1BC0448E00BDC151 /* Assets.swift */,
 			);
 			path = AutoFinancing;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				DBE668BD1BBDA8FC00C979B2 /* LoanParameterTableViewController.swift in Sources */,
 				DBE668BA1BBDA8FC00C979B2 /* Asset.swift in Sources */,
 				DBE668BB1BBDA8FC00C979B2 /* Loan.swift in Sources */,
+				DB3DB5E01BC0448E00BDC151 /* Assets.swift in Sources */,
 				DBD640E11BB9F10A0014E833 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
